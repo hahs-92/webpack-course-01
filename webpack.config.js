@@ -11,5 +11,17 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js']
+    },
+    module: {
+        //babel
+        rules: [
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader'
+                }
+            }
+        ]
     }
 }
