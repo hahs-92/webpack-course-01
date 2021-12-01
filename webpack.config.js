@@ -17,7 +17,9 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[contenthash].js',
+        clean: true
     },
+    mode: "production",
     resolve: {
         extensions: ['.mjs','.js'],
         alias: {
