@@ -7,6 +7,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyPLugin = require('copy-webpack-plugin')
 //optimization
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
+//variables de entorno
+const Dotenv = require('dotenv-webpack')
 
 /** @type {import('webpack').Configuration} */
 
@@ -79,7 +81,8 @@ module.exports = {
                     to: "assets/images"
                 }
             ]
-        })
+        }),
+        new Dotenv()
     ],
     optimization: {
         minimize: true,
