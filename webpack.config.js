@@ -1,4 +1,6 @@
 const path = require('path')
+//plugin html
+const HtmlWebpackPLugin = require('html-webpack-plugin')
 
 
 /** @type {import('webpack').Configuration} */
@@ -10,7 +12,7 @@ module.exports = {
         filename: 'main.js'
     },
     resolve: {
-        extensions: ['.js']
+        extensions: ['.mjs','.js']
     },
     module: {
         //babel
@@ -23,5 +25,12 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPLugin({
+            inject: 'body', //true - head - false
+            template: './public/index.html',
+            filename: './index.html'
+        })
+    ]
 }
