@@ -1,8 +1,8 @@
-import Template from './templates/Template.js';
+import Template from '@templates/Template.js';
 //styles
-import './styles/main.css'
+import '@styles/main.css'
 //styles with stylus
-import './styles/vars.styl'
+import '@styles/vars.styl'
 
 
 (async function App() {
