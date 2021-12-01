@@ -12,7 +12,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'main.js'
+        filename: 'main.js',
     },
     resolve: {
         extensions: ['.mjs','.js']
@@ -39,8 +39,19 @@ module.exports = {
             //images
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset/resource'
-            }
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/images/[hash][ext][query]'
+                }
+            },
+            //fonts
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/fonts/[name][ext]'
+                }
+            },
         ]
     },
     plugins: [
