@@ -17,6 +17,7 @@ module.exports = {
         filename: '[name].[contenthash].js',
     },
     mode: 'development',
+    // watch: true, ya no se usa xq se usa dev server
     resolve: {
         extensions: ['.mjs','.js'],
         alias: {
@@ -26,6 +27,17 @@ module.exports = {
             '@images': path.resolve(__dirname, 'src/assets/images/'),
 
         }
+    },
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'dist'),
+            watch: true
+        },
+        watchFiles: path.join(__dirname, './**'),
+        compress: true,
+        historyApiFallback: true,
+        port: 5000,
+        open: true
     },
     module: {
         rules: [
