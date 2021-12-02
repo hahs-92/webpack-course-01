@@ -7,6 +7,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyPLugin = require('copy-webpack-plugin')
 //variables de entorno
 const Dotenv = require('dotenv-webpack')
+//analyzer-bundle
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 /** @type {import('webpack').Configuration} */
 
@@ -93,6 +95,7 @@ module.exports = {
                 }
             ]
         }),
-        new Dotenv()
+        new Dotenv(),
+        new BundleAnalyzerPlugin()
     ]
 }
