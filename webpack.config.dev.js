@@ -20,6 +20,7 @@ module.exports = {
     },
     mode: 'development',
     // watch: true, ya no se usa xq se usa dev server
+    devtool: 'source-map',
     resolve: {
         extensions: ['.mjs','.js'],
         alias: {
